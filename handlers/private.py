@@ -12,7 +12,6 @@ from config import (
     BOT_NAME,
     BOT_USERNAME,
     SUPPORT_GROUP,
-    OWNER_NAME,
     UPDATES_CHANNEL,
     ASSISTANT_NAME,
 )
@@ -115,7 +114,7 @@ async def bilgi(_, message: Message):
                          "Ana menü🏠", callback_data="cbstart")
                  ],[
                      InlineKeyboardButton(
-                         "🪐 Geliştirici", url=f"https://t.me/{OWNER_NAME}")
+                         "🪐 Geliştirici", url=f"https://t.me/mutsuz_pandabio")
                  ]
              ]
          )
@@ -142,7 +141,7 @@ async def cbbilgi(_, query: CallbackQuery):
         ],
         [
           InlineKeyboardButton(
-            "🪐 Geliştirici", url=f"https://t.me/{OWNER_NAME}")
+            "🪐 Geliştirici", url=f"https://t.me/mutsuz_pandabio")
         ]
       ]
      ))
@@ -155,7 +154,7 @@ async def herkes(_, query: CallbackQuery):
              [
                  [
                      InlineKeyboardButton(
-                         "🪐 Geliştirici", url=f"https://t.me/{OWNER_NAME}")
+                         "🪐 Geliştirici", url=f"https://t.me/mutsuz_pandabio")
                  ],
                  [
                      InlineKeyboardButton(
@@ -173,7 +172,7 @@ async def admin(_, query: CallbackQuery):
              [
                  [
                      InlineKeyboardButton(
-                         "🪐 Geliştirici", url=f"https://t.me/{OWNER_NAME}")
+                         "🪐 Geliştirici", url=f"https://t.me/mutsuz_pandabio")
                  ],
                  [
                      InlineKeyboardButton(
@@ -248,7 +247,7 @@ async def alive(c: Client, message: Message):
         ]
     )
 
-    alive = f"**• ᴍᴇʀʜᴀʙᴀ {message.from_user.mention()} {BOT_NAME}**\n\n🧑🏼‍💻 sᴀʜɪʙɪᴍ: [{ALIVE_NAME}](https://t.me/{OWNER_NAME})\n👾 ʙᴏᴛ ᴠᴇʀsɪᴏɴ: `v{__version__}`\n🔥 ᴘʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ: `{pyrover}`\n🐍 ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ: `{__python_version__}`\n✨ PʏTɢCᴀʟʟs ᴠᴇʀsɪᴏɴ: `{pytover.__version__}`\n🆙 ᴄᴀʟɪsᴍᴀ ᴅᴜʀᴜᴍᴜ: `{uptime}`\n\n❤ **Bᴇɴɪ ɢʀᴜʙᴀ ᴀʟᴅɪɢɪɴɪᴢ ɪᴄɪɴ ᴛᴇsᴇᴋᴋᴜʀʟᴇʀ . . !**"
+    alive = f"**• ᴍᴇʀʜᴀʙᴀ {message.from_user.mention()} {BOT_NAME}**\n\n🧑🏼‍💻 sᴀʜɪʙɪᴍ: [{ALIVE_NAME}](https://t.me/mutsuz_pandabio)\n👾 ʙᴏᴛ ᴠᴇʀsɪᴏɴ: `v{__version__}`\n🔥 ᴘʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ: `{pyrover}`\n🐍 ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ: `{__python_version__}`\n✨ PʏTɢCᴀʟʟs ᴠᴇʀsɪᴏɴ: `{pytover.__version__}`\n🆙 ᴄᴀʟɪsᴍᴀ ᴅᴜʀᴜᴍᴜ: `{uptime}`\n\n❤ **Bᴇɴɪ ɢʀᴜʙᴀ ᴀʟᴅɪɢɪɴɪᴢ ɪᴄɪɴ ᴛᴇsᴇᴋᴋᴜʀʟᴇʀ . . !**"
 
     await c.send_photo(
         chat_id,
