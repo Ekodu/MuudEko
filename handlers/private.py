@@ -11,6 +11,7 @@ from config import (
     ALIVE_NAME,
     BOT_NAME,
     BOT_USERNAME,
+    OWNER_NAME, 
     SUPPORT_GROUP,
     UPDATES_CHANNEL,
     ASSISTANT_NAME,
@@ -114,7 +115,7 @@ async def bilgi(_, message: Message):
                          "Ana menü🏠", callback_data="cbstart")
                  ],[
                      InlineKeyboardButton(
-                         "🪐 Geliştirici", url=f"https://t.me/mutsuz_pandabio")
+                         "🪐 Sahip", url=f"https://t.me/{OWNER_NAME}")
                  ]
              ]
          )
@@ -141,7 +142,7 @@ async def cbbilgi(_, query: CallbackQuery):
         ],
         [
           InlineKeyboardButton(
-            "🪐 Geliştirici", url=f"https://t.me/mutsuz_pandabio")
+            "🪐 Sahip", url=f"https://t.me/{OWNER_NAME}")
         ]
       ]
      ))
@@ -154,7 +155,7 @@ async def herkes(_, query: CallbackQuery):
              [
                  [
                      InlineKeyboardButton(
-                         "🪐 Geliştirici", url=f"https://t.me/mutsuz_pandabio")
+                         "🪐 Sahip", url=f"https://t.me/{OWNER_NAME}")
                  ],
                  [
                      InlineKeyboardButton(
@@ -172,7 +173,7 @@ async def admin(_, query: CallbackQuery):
              [
                  [
                      InlineKeyboardButton(
-                         "🪐 Geliştirici", url=f"https://t.me/mutsuz_pandabio")
+                         "🪐 Sahip", url=f"https://t.me/{OWNER_NAME}")
                  ],
                  [
                      InlineKeyboardButton(
