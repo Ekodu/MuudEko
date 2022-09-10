@@ -66,24 +66,24 @@ async def start_(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "➕  Grubuna Ekle  ➕", 
+                        "🍷 Qrupuna Əlavə Et 🖤", 
                         url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🎙 Asistan", url=f"https://t.me/{ASSISTANT_NAME}"
+                        "🎙 Asistan", url=f"https://t.me/EkoAsistant"
                     ),
                     InlineKeyboardButton(
-                        "💬 Support", url=f"https://t.me/{SUPPORT_GROUP}"
+                        "💬 Support", url=f"https://t.me/EkoBlogs"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "📚 Komutlar" , callback_data= "cbhelp"
+                        "📚 Əmrlər" , callback_data= "cbhelp"
                     ),
                     InlineKeyboardButton(
-                        "📣 Kanal", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "📣 Kanal", url=f"https://t.me/EkoBlogs"
                     )
                 ]
                 
@@ -96,26 +96,26 @@ async def start_(client: Client, message: Message):
 async def gstart(_, message: Message):
     await message.reply_text(
         f"""**🧸 {BOT_NAME} Online**""",
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📣 Support", url=f"https://t.me/{SUPPORT_GROUP}")]])
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📣 Support", url=f"https://t.me/EkoBlogs")]])
     )
 
 @Client.on_message(filters.private & filters.incoming & filters.command(["help", f"help@{BOT_USERNAME}"]))
 async def bilgi(_, message: Message):
-      await message.reply_text(" ❗ Not:\n Botun aktif çalışması için şu üç yetkiye ihtiyaç vardır:\n- Mesaj silme yetkisi,\n- Bağlantı ile davet etme yetkisi,\n- Sesli sohbeti yönetme yetkisi.", 
+      await message.reply_text(" ❗ Not:\n Botun aktiv olması üçün üç yetki lazımdır:\n- Mesajları silmə,\n- Bağlantı ilə dəvət eləmə,\n- Səsli söhbəti idarə eləmə yetkisi.", 
       reply_markup=InlineKeyboardMarkup(
              [
                  [
                      InlineKeyboardButton(
-                         "🔓 Üye komutları", callback_data="herkes"), 
+                         "🔓 User əmrləri", callback_data="herkes"), 
 
                      InlineKeyboardButton(
-                         "🔐 Admin komutları", callback_data="admin")
+                         "🔐 Admin əmrləri", callback_data="admin")
                  ],[
                      InlineKeyboardButton(
                          "Ana menü🏠", callback_data="cbstart")
                  ],[
                      InlineKeyboardButton(
-                         "🪐 Sahip", url=f"https://t.me/{OWNER_NAME}")
+                         "🪐 Sahib", url=f"https://t.me/Nevrozdu")
                  ]
              ]
          )
@@ -126,7 +126,7 @@ async def bilgi(_, message: Message):
 
 @Client.on_callback_query(filters.regex("cbhelp"))
 async def cbbilgi(_, query: CallbackQuery):
-    await query.edit_message_text(" ❗ Not:\nBotun aktif çalışması için şu üç yetkiye ihtiyaç vardır:\n- Mesaj silme yetkisi,\n- Bağlantı ile davet etme yetkisi,\n- Sesli sohbeti yönetme yetkisi.", 
+    await query.edit_message_text(" ❗ Not:\nBotun aktiv olması üçün üç yetki lazımdır:\n- Mesajları silmə,\n- Bağlantı ilə dəvət eləmə,\n- Səsli söhbəti idarə eləmə yetkisi.", 
     reply_markup=InlineKeyboardMarkup(
       [
         [
@@ -155,7 +155,7 @@ async def herkes(_, query: CallbackQuery):
              [
                  [
                      InlineKeyboardButton(
-                         "🪐 Sahip", url=f"https://t.me/{OWNER_NAME}")
+                         "🪐 Sahib", url=f"https://t.me/Nevrozdu")
                  ],
                  [
                      InlineKeyboardButton(
@@ -168,12 +168,12 @@ async def herkes(_, query: CallbackQuery):
 
 @Client.on_callback_query(filters.regex("admin"))
 async def admin(_, query: CallbackQuery):
-    await query.edit_message_text(f"""<b>Selam {query.from_user.mention}!\nBu botun adminler için komut menüsü 🤩\n\n ▶️ /devam - şarkı çalmaya devam et\n ⏸️ /durdur - çalan parçayı duraklatmak için\n 🔄 /atla- Sıraya alınmış müzik parçasını atlatır.\n ⏹ /son - müzik çalmayı durdurma\n 🔼 /ver botun sadece yönetici için kullanılabilir olan komutlarını kullanabilmesi için kullanıcıya yetki ver\n 🔽 /al botun yönetici komutlarını kullanabilen kullanıcının yetkisini al\n\n ⚪ /asistan - Müzik asistanı grubunuza katılır.\n\n</b>""",
+    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botun adminler üçün komut menüsü 🤩\n\n ▶️ /devam - şarkı çalmaya devam et\n ⏸️ /durdur - çalan parçayı duraklatmak üçün\n 🔄 /atla- Sıraya alınmış müzik parçasını atlatır.\n ⏹ /son - müzik çalmayı durdurma\n 🔼 /ver botun sadece yönetici üçün kullanılabilir olan komutlarını kullanabilmesi üçün kullanıcıya yetki ver\n 🔽 /al botun yönetici komutlarını kullanabilen kullanıcının yetkisini al\n\n ⚪ /asistan - Müzik asistanı grubunuza katılır.\n\n</b>""",
     reply_markup=InlineKeyboardMarkup(
              [
                  [
                      InlineKeyboardButton(
-                         "🪐 Sahip", url=f"https://t.me/{OWNER_NAME}")
+                         "🪐 Sahib", url=f"https://t.me/Nevrozdu")
                  ],
                  [
                      InlineKeyboardButton(
@@ -191,7 +191,7 @@ async def admin(_, query: CallbackQuery):
 @Client.on_message(filters.command("help") & ~filters.private & ~filters.channel)
 async def ghelp(_, message: Message):
     await message.reply_text(
-        f"""**Merhaba şuan aktif olarak çalışmaktayım yardım için aşağıda buttonu kullanınız!**""",
+        f"""**Merhaba şuan aktif olarak çalışmaktayım yardım üçün aşağıda buttonu kullanınız!**""",
         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 Yardım", url=f"https://t.me/{BOT_USERNAME}?start")]])
     )
 
@@ -203,24 +203,24 @@ async def cbstart(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(
-                        "➕ Grubuna Ekle ➕",
+                        "🍷 Qrupuna əlavə et 🖤",
                         url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🎙 Asistan", url=f"https://t.me/{ASSISTANT_NAME}"
+                        "🎙 Asistan", url=f"https://t.me/EkoAsistant"
                     ),
                     InlineKeyboardButton(
-                        "💬 Support", url=f"https://t.me/{SUPPORT_GROUP}"
+                        "💬 Support", url=f"https://t.me/EkoBlogs"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "📚 Komutlar" , callback_data= "cbhelp"
+                        "📚 Əmrlər" , callback_data= "cbhelp"
                     ),
                     InlineKeyboardButton(
-                        "📣 Kanal", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "📣 Kanal", url=f"https://t.me/EkoBlogs"
                     )
                 ]
                 
@@ -240,9 +240,9 @@ async def alive(c: Client, message: Message):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("📣 ᴅᴇsᴛᴇᴋ", url=f"https://t.me/{SUPPORT_GROUP}"),
+                InlineKeyboardButton("📣 ᴅᴇsᴛᴇᴋ", url=f"https://t.me/EkoBlogs"),
                 InlineKeyboardButton(
-                    "🗯️ ʙɪʟɢɪ", url=f"https://t.me/{UPDATES_CHANNEL}"
+                    "🗯️ ʙɪʟɢɪ", url=f"https://t.me/EkoBlogs"
                 ),
             ]
         ]
@@ -265,6 +265,6 @@ async def ping_pong(client: Client, message: Message):
     start = time()
     m_reply = await message.reply_text("pinging...")
     delta_ping = time() - start
-    await m_reply.edit_text("🏓 `PONG!!`\n" f"⚡️ `{delta_ping * 1000:.3f} ms`")
+    await m_reply.edit_text("🏓 `PİNG!!`\n" f"⚡️ `{delta_ping * 1000:.3f} ms`")
 
 
