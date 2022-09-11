@@ -131,10 +131,10 @@ async def cbbilgi(_, query: CallbackQuery):
       [
         [
           InlineKeyboardButton(
-            "🔓 Üye Komutları", callback_data ="herkes"), 
+            "🔓 User əmrləri", callback_data ="herkes"), 
           
           InlineKeyboardButton(
-            "🔐 Admin Komutları",callback_data ="admin")
+            "🔐 Admin Əmrləri",callback_data ="admin")
         ],
         [
           InlineKeyboardButton(
@@ -142,7 +142,7 @@ async def cbbilgi(_, query: CallbackQuery):
         ],
         [
           InlineKeyboardButton(
-            "🪐 Sahip", url=f"https://t.me/{OWNER_NAME}")
+            "🪐 Sahib", url=f"https://t.me/{OWNER_NAME}")
         ]
       ]
      ))
@@ -150,7 +150,7 @@ async def cbbilgi(_, query: CallbackQuery):
 
 @Client.on_callback_query(filters.regex("herkes"))
 async def herkes(_, query: CallbackQuery):
-    await query.edit_message_text(f"""<b>Selam {query.from_user.mention}!\nBu botun herkes için komut menüsü 😉\n\n ▶️ /oynat - şarkı çalmak için youtube url'sine veya şarkı dosyasına yanıt verme\n ▶️ /oynat <song name> - istediğiniz şarkıyı çal\n 🔴 \n 🎵 /bul <song name> - istediğiniz şarkıları hızlı bir şekilde bulun\n 🎵 /vbul istediğiniz videoları hızlı bir şekilde bulun\n 🔍 /ara <query> - youtube'da ayrıntıları içeren videoları arama\n 🏓/ping bot ping durumunu kontrol eder\n\n</b>""",
+    await query.edit_message_text(f"""<b>Salam {query.from_user.mention}!\nBu botun herkes üçün komut menüsü 😉\n\n ▶️ /oynat - şarkı çalmak üçün youtube url'sine veya şarkı dosyasına yanıt verme\n ▶️ /oynat <song name> - istediğiniz şarkıyı çal\n 🔴 \n 🎵 /bul <song name> - istediğiniz şarkıları hızlı bir şekilde bulun\n 🎵 /vbul istediğiniz videoları hızlı bir şekilde bulun\n 🔍 /ara <query> - youtube'da ayrıntıları içeren videoları arama\n 🏓/ping bot ping durumunu kontrol eder\n\n</b>""",
     reply_markup=InlineKeyboardMarkup(
              [
                  [
